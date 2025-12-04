@@ -80,10 +80,3 @@ Decrypted Message: Hello World
 ```
 
 ---
-se:
-            result += char  # Non-alphabetic characters remain unchanged
-    return result
-
-
-def caesar_cipher_decrypt(text, shift):
-    return caesar_cipher_encrypt(text, -shift)
