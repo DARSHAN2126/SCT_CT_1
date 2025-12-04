@@ -1,64 +1,89 @@
-# 🔐 Caesar Cipher Project
+# 🔐 Caesar Cipher Program
 
-## 1. Introduction & Explanation
-The **Caesar Cipher** is one of the simplest and most widely known encryption techniques. It works by shifting each letter in the plaintext by a fixed number of positions down the alphabet.
+This project implements a simple **Caesar Cipher encryption and decryption tool** using Python.
+It allows users to enter a message and a shift value, then outputs:
 
-- For example, with a shift of `3`:
-  - `A → D`
-  - `B → E`
-  - `C → F`
-  - ...
-  - `X → A`
-  - `Y → B`
-  - `Z → C`
+* The **original message**
+* The **encrypted message**
+* The **decrypted message**
 
-So, the word **HELLO** becomes **KHOOR** when encrypted with a shift of `3`.
-
-This project provides a Python implementation of the Caesar Cipher that allows you to **encrypt** and **decrypt** messages easily.
+This is a classic example of a substitution cipher used for educational and cryptography practice.
 
 ---
 
-## 2. Usage
+## 📌 Features
 
-### 🔧 Requirements
-- Python 3.x installed on your system
+* Encrypt any text using a Caesar Cipher
+* Decrypt automatically using the same shift
+* Supports both uppercase and lowercase letters
+* Non-alphabet characters remain unchanged
+* Simple command-line user interface
 
-### ▶️ Running the Program
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/your-username/caesar-cipher.git
-   cd caesar-cipher
+---
+
+## 🧠 How It Works
+
+The Caesar Cipher shifts each letter by a specified number.
+Example with shift = 3:
+
+```
+A → D  
+B → E  
+C → F  
+...
+```
+
+Decryption reverses the shift.
+
+---
+
+## 📂 Project Structure
+
+```
+├── caesar_cipher.py     # Main Python script
+└── README.md            # Documentation
+```
+
+---
+
+## ▶️ Usage
+
+### 1. Run the program
+
+```bash
 python caesar_cipher.py
+```
 
-3. Enter:
-- A message (text you want to encrypt/decrypt)
-- A shift value (integer)
-Example Working
-Example 1: Encryption
-   === Caesar Cipher Program ===
+### 2. Enter your message
+
+Example:
+
+```
 Enter your message: Hello World
-Enter shift value (integer): 3
+```
 
+### 3. Enter a shift value
+
+Example:
+
+```
+Enter shift value (integer): 3
+```
+
+### 4. Program Output
+
+```
 --- Results ---
 Original Message: Hello World
 Encrypted Message: Khoor Zruog
 Decrypted Message: Hello World
+```
 
-Example 2: Encryption with Shift 5
-Enter your message: Python
-Enter shift value (integer): 5
+---
+se:
+            result += char  # Non-alphabetic characters remain unchanged
+    return result
 
---- Results ---
-Original Message: Python
-Encrypted Message: Udymts
-Decrypted Message: Python
 
-caesar-cipher/
-│
-├── caesar_cipher.py   # Main program file
-└── README.md          # Documentation
-
-✨ Features- Encrypts and decrypts text using Caesar Cipher
-- Handles both uppercase and lowercase letters
-- Leaves non-alphabetic characters unchanged
-- Simple and beginner-friendly implementation
+def caesar_cipher_decrypt(text, shift):
+    return caesar_cipher_encrypt(text, -shift)
